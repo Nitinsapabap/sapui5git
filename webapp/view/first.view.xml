@@ -1,0 +1,78 @@
+<mvc:View 
+           controllerName="NewProject.NEWPROJECT.controller.first" 
+           xmlns:mvc="sap.ui.core.mvc" 
+           xmlns:html="http://www.w3.org/1999/xhtml"
+        	xmlns="sap.m" 
+        	xmlns:core="sap.ui.core" 
+        	xmlns:l="sap.ui.layout" 
+        	xmlns:f="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page title="Title - First View">
+				<content> 
+				<f:SimpleForm id="idSimpleForm"
+					editable="true"
+					layout="ResponsiveGridLayout"
+					title="Form Title">
+				<f:content>
+					<Label text="Product ID"/>
+					<Input
+					id="idPname"
+             		value="{helloPanel>/recipient/name}"
+	            	description="{helloPanel>/recipient/name}"
+		            valueLiveUpdate="true"
+		            width="60%"/>
+		            <Button
+	             	text="{i18n>showHelloButtonText}"
+		            press="onShowHello"
+		            width="40%"/>
+					<Label text="Category"/>
+					<Input value="{Model>Category}"
+					       editable="false"/>
+					<Label text="Product ID from ODATA"/>
+					<Input value="{Model>ProductID}"/>
+					<Label text="Product ID Description"/>
+					<Input value="{Model>Description}"/>
+				</f:content>	
+				</f:SimpleForm>
+				<Button text="ODATA Value" press="oncall"/>	
+				
+				</content>
+				
+				<VBox class="sapUiNoContentPadding">
+					<f:SimpleForm id="SimpleForm" editable="true" layout="ResponsiveGridLayout" title="Selection Data" labelSpanXL="3" labelSpanL="3"
+						labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+						columnsL="1" columnsM="1" singleContainerFullSize="false">
+						<f:content>
+							<Label text="Plant"/>
+							<Select>
+								<items>
+									<core:Item text="Germany"/>
+									<core:Item text="USA"/>
+									<core:Item text="England"/>
+									<core:Item text="India"/>
+									<core:Item text="Pakistan"/>
+								</items>
+							</Select>
+							<Label text="Amount"/>
+							<Input value="" placeholder="Enter the Amount..."/>
+							<Label text="Name"/>
+							<Input value="" editable="true" placeholder="Enter name ..."/>
+							<Label text="Schedule"/>
+							<RadioButtonGroup columns="2" selectedIndex="2">
+								<buttons>
+									<RadioButton id="immdRB2" text="Immediately" select="onSelecImd" selected="true"/>
+									<RadioButton id="scheduleRB2" select="onselect" text="Future"/>
+								</buttons>
+							</RadioButtonGroup>
+							<DatePicker visible="false" id="DP12" placeholder="Enter Date ..." change="handleChange" class="sapUiSmallMarginBottom"/>
+						</f:content> 
+						<f:content>
+						  <Button text="Execute" press="onContinue" />	
+						</f:content>  	
+					</f:SimpleForm>
+				</VBox>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

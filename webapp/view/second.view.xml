@@ -1,0 +1,56 @@
+<mvc:View controllerName="NewProject.NEWPROJECT.controller.second" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:semantic="sap.f.semantic">
+	<App>
+		<pages>
+			<Page title="Second View" showNavButton="true" navButtonPress="onback">
+				<content>
+					<f:SimpleForm id="idSimple" editable="true" layout="ResponsiveGridLayout" title="Second Page Details">
+						<f:content>
+							<Label text=" Product Value from First View" />
+							<Text text="{TempDataModel>/ProductID}"/>
+							<Label text="Category"/>
+							<Input value="{Model>Category}" editable="false" id="cat"/>
+							<Label text="Product ID from ODATA"/>
+							<Input value="{Model>ProductID}" editable="false" id="prd"/>
+							<Label text="Product ID Description"/>
+							<Input value="{Model>Description}" editable="false" id="des"/>
+							<Button text="Fetch Data " press="fetch" width="20%"/>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+				<Panel expandable="true" expanded="false" headerText="Product Details" width="auto" class="sapUiResponsiveMargin">
+					<content>
+						<Table id="packItem" items="{/data}" growing="true" growingThreshold="4" growingScrollToLoad="false">
+							<items>
+								<ColumnListItem id="itemlist">
+									<cells>
+										<Text text="{Product}" id="Product"/>
+										<Text text="{Category}" id="Category"/>	
+									    <Text text="{Description}" id="Description"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+							<columns>
+								<Column id="product">
+									<header>
+										<Label text="Product" id="headProduct"/>
+									</header>
+								</Column>
+								<Column id="category">
+									<header>
+										<Label text="Category" id="headcategory"/>
+									</header>
+								</Column>
+								<Column id="material">
+									<header>
+										<Label text="Description" id="headdescription"/>
+									</header>
+								</Column>								
+							</columns>
+						</Table>
+					</content>
+				</Panel>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
