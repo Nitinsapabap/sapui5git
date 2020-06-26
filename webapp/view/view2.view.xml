@@ -1,0 +1,35 @@
+<mvc:View 
+          controllerName="CustApp.CustApp.controller.view2" 
+          xmlns:mvc="sap.ui.core.mvc" 
+          xmlns:html="http://www.w3.org/1999/xhtml"
+	      xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="Second View"
+		    	showNavButton="true"
+			    navButtonPress="onback">
+				<content></content>
+					<content>
+						<Table id="packItem" items="{/data}" growing="true" growingThreshold="4" growingScrollToLoad="false">
+							<items>
+								<ColumnListItem id="itemlist">
+									<cells>
+										<Text text="{Material}" id="Material"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+							<columns>
+								<Column id="material">
+									<header>
+										<Label text="Material" id="headMaterial"/>
+									</header>
+								</Column>
+							</columns>
+						</Table>
+					</content>
+				
+			</Page>
+			
+		</pages>
+	</App>
+</mvc:View>

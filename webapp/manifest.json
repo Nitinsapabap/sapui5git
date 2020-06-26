@@ -1,0 +1,123 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "CustApp.CustApp",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		
+			"dataSources": {
+			"ES5": {
+				"uri": "/destinations/ES5/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			}
+		},
+		
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.38.11"
+		}
+	},
+
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_bluecrystal"
+
+		]
+	},
+
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "CustApp.CustApp.view.app",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.comp": {}
+			}
+		},
+		
+				"config": {
+			"sample": {
+				"files": [
+					"view1.view.xml",
+					"view1.controller.js",
+					"Dialog.fragment.xml",
+					"manifest.json"
+				]
+			}
+		},
+					"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "CustApp.CustApp.view",
+				"targetAggregation": "pages"
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "view1",
+				"view": "view1",
+				"targetAggregation": "pages",
+				"controlId": "app"
+			},
+			{
+				"pattern": "View2",
+				"name": "view2",
+				"view": "view2",
+				"targetAggregation": "pages",
+				"controlId": "app"
+			}]
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "CustApp.CustApp.i18n.i18n"
+				}
+			},
+			"helloPanel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/HelloPanel.json"
+			},
+			"Model": {
+				"dataSource": "ES5"
+		}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		}
+	}
+}

@@ -1,0 +1,46 @@
+<mvc:View 
+          controllerName="CustApp.CustApp.controller.view1" 
+          xmlns:mvc="sap.ui.core.mvc" 
+          xmlns:core="sap.ui.core"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+	      xmlns="sap.m"
+	      xmlns:f="sap.ui.layout.form">
+	<Page showHeader="false">
+	<content>
+	<f:SimpleForm title="selection screen"
+	              editable="true"
+	              layout="ResponsiveGridLayout">
+		         <f:content>
+		         	<Label text="Company Code"/>
+		         	<MultiInput id="idInput" showValueHelp="true" width="200px" valueHelpRequest="handle"/>
+		         	<Label text= ""/>
+		         </f:content>
+		         <f:content>
+		         	<Button text="Execute" press="onClick" width="10%"/>
+		         </f:content>
+		
+	</f:SimpleForm>	
+	</content>	
+	
+	<Panel expandable="true" expanded="true" width="auto" class="sapUiResponsiveMargin">
+					<content>
+						<Table id="packItem" items="{/data}" growing="true" growingThreshold="4" growingScrollToLoad="false">
+							<items>
+								<ColumnListItem id="itemlist">
+									<cells>
+										<Text text="{Material}" id="Material"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+							<columns>
+								<Column id="material">
+									<header>
+										<Label text="Material" id="headMaterial"/>
+									</header>
+								</Column>
+							</columns>
+						</Table>
+					</content>
+				</Panel>
+	</Page>
+</mvc:View>

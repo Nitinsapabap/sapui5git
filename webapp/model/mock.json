@@ -1,0 +1,26 @@
+{
+"CompanyCodes": [
+	{
+	"CompanyCode": "0001",
+	"CompanyName": "Schenker India Pvt. Ltd.",
+    "City" : "Delhi",
+    "CurrencyCode": "Rupees"
+	},
+	
+		{
+	"CompanyCode": "0002",
+	"CompanyName": "DB Schenker",
+    "City" : "Essen",
+    "CurrencyCode": "EUR"
+	},
+	
+	{
+	"CompanyCode": "0003",
+	"CompanyName": "DB Schenker",
+    "City" : "Turkey",
+    "CurrencyCode": "EUR"
+	}
+	
+	]	
+	
+}
